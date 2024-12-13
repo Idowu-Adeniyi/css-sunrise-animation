@@ -1,0 +1,70 @@
+.sky {
+  height: 300px;
+  border: 1px solid #000;
+  background: #806363;
+}
+.sun {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+}
+.heading-text {
+  text-align: center;
+}
+
+@keyframes sunMovement {
+  0% {
+    top: 83%;
+    left: calc(100% + -48px);
+    background-color: red;
+  }
+  50% {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: yellow;
+  }
+  100% {
+    top: 100%;
+    left: calc(-210px);
+    bottom: -25px;
+    background-color: orangered;
+  }
+}
+
+@keyframes skyColors {
+  0% {
+    background-color: #1c1341;
+  }
+  33% {
+    background-color: darkorange;
+  }
+  66% {
+    background-color: skyblue;
+  }
+  100% {
+    background-color: crimson;
+  }
+}
+
+.sky.animated .sun {
+  animation: sunMovement 10s linear infinite;
+}
+
+.sky.animated {
+  animation: skyColors 10s linear infinite;
+}
+
+.play-pause-btn {
+  /* position: absolute; */
+  top: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: solid;
+  border-radius: 5px;
+}
